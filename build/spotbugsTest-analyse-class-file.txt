@@ -1,0 +1,4 @@
+C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\test\CharacterTest$1.class
+C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\test\CharacterTest.class
+C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\test\EnemyTest.class
+C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\test\ItemTest.class

@@ -1,0 +1,791 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		SER316_DesignPattern (spotbugsMain)</p>
+      <p>SpotBugs version: 4.7.2</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\battle\Battle.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\characters\Character.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\characters\CharacterDecorator.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\characters\CharacterFactory.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\characters\Evolution.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\characters\Fighter.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\characters\Mage.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\characters\Thief.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\dungeon\Dungeon.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\enemy\BossEnemy.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\enemy\Enemy.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\enemy\EnemyFactory.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\enemy\MediumEnemy.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\enemy\SmallEnemy.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\floor\Floor.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\item\Armor.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\item\Boots.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\item\Helmet.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\item\InstantLevelUpItem.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\item\Item.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\item\ItemFactory$1.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\item\ItemFactory.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\item\ItemType$Type.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\item\ItemType.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\item\MagicScroll.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\item\Potion.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\item\Shield.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\item\Sword.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\Main.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\race\Dwarf.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\race\Elf.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\race\Human.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\race\Orc.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\race\Race.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\shop\Shop$1.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\shop\Shop.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\shop\ShopItem.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\shop\ShopItemFactory$1.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\shop\ShopItemFactory.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\simulation\Mediator.class</li>
+         <li>C:\Users\amand\Desktop\SER316_DesignPattern\build\classes\java\main\trainer\Trainer.class</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>760 lines of code analyzed,
+	in 41 classes, 
+	in 11 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right">6</td>
+            <td align="right">7.89</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right">20</td>
+            <td align="right">26.32</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>26</b>
+            </td>
+            <td align="right">
+               <b>34.21</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_I18N">Internationalization Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+            </td>
+            <td align="right">2</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_CORRECTNESS">Correctness Warnings</a>
+            </td>
+            <td align="right">5</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_I18N">Internationalization Warnings</a>
+            </td>
+            <td align="right">2</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+            </td>
+            <td align="right">10</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+            </td>
+            <td align="right">2</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+            </td>
+            <td align="right">5</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>26</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e192');">
+            <td>
+               <span class="priority-1">DMI</span>
+            </td>
+            <td>Random object created and used only once in floor.Floor.generateItems(Character)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e192" style="display: none;">
+                  <a href="#DMI_RANDOM_USED_ONLY_ONCE">Bug type DMI_RANDOM_USED_ONLY_ONCE (click for details)</a>
+                  <br/>In class floor.Floor<br/>In method floor.Floor.generateItems(Character)<br/>Called method java.util.Random.nextInt(int)<br/>At Floor.java:[line 67]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e250');">
+            <td>
+               <span class="priority-1">DMI</span>
+            </td>
+            <td>Random object created and used only once in shop.Shop.generateRandomItems()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e250" style="display: none;">
+                  <a href="#DMI_RANDOM_USED_ONLY_ONCE">Bug type DMI_RANDOM_USED_ONLY_ONCE (click for details)</a>
+                  <br/>In class shop.Shop<br/>In method shop.Shop.generateRandomItems()<br/>Called method java.util.Random.nextInt(int)<br/>At Shop.java:[line 27]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_CORRECTNESS">Correctness Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e168');">
+            <td>
+               <span class="priority-1">BC</span>
+            </td>
+            <td>Impossible cast from java.util.ArrayList&lt;enemy.Enemy&gt; to enemy.Enemy in floor.Floor.explore(Character)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e168" style="display: none;">
+                  <a href="#BC_IMPOSSIBLE_CAST">Bug type BC_IMPOSSIBLE_CAST (click for details)</a>
+                  <br/>In class floor.Floor<br/>In method floor.Floor.explore(Character)<br/>Actual type java.util.ArrayList&lt;enemy.Enemy&gt;<br/>Expected enemy.Enemy<br/>Value loaded from field floor.Floor.enemies<br/>At Floor.java:[line 48]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e416');">
+            <td>
+               <span class="priority-1">NP</span>
+            </td>
+            <td>Null pointer dereference of floor1 in simulation.Mediator.startSimulation()</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e416" style="display: none;">
+                  <a href="#NP_ALWAYS_NULL">Bug type NP_ALWAYS_NULL (click for details)</a>
+                  <br/>In class simulation.Mediator<br/>In method simulation.Mediator.startSimulation()<br/>Value loaded from floor1<br/>Dereferenced at Mediator.java:[line 36]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e352');">
+            <td>
+               <span class="priority-2">SA</span>
+            </td>
+            <td>Self assignment of field ShopItem.itemType in new shop.ShopItem(Item, int)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e352" style="display: none;">
+                  <a href="#SA_FIELD_SELF_ASSIGNMENT">Bug type SA_FIELD_SELF_ASSIGNMENT (click for details)</a>
+                  <br/>In class shop.ShopItem<br/>In method new shop.ShopItem(Item, int)<br/>Field shop.ShopItem.itemType<br/>At ShopItem.java:[line 22]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e368');">
+            <td>
+               <span class="priority-2">UR</span>
+            </td>
+            <td>Uninitialized read of itemType in new shop.ShopItem(Item, int)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e368" style="display: none;">
+                  <a href="#UR_UNINIT_READ">Bug type UR_UNINIT_READ (click for details)</a>
+                  <br/>In class shop.ShopItem<br/>In method new shop.ShopItem(Item, int)<br/>Field shop.ShopItem.itemType<br/>At ShopItem.java:[line 22]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e385');">
+            <td>
+               <span class="priority-2">UwF</span>
+            </td>
+            <td>Unwritten field: shop.ShopItem.items</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e385" style="display: none;">
+                  <a href="#UWF_UNWRITTEN_FIELD">Bug type UWF_UNWRITTEN_FIELD (click for details)</a>
+                  <br/>In class shop.ShopItem<br/>Field shop.ShopItem.items<br/>At ShopItem.java:[line 39]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_I18N">Internationalization Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e52');">
+            <td>
+               <span class="priority-1">Dm</span>
+            </td>
+            <td>Found reliance on default encoding in Main.&lt;static initializer for Main&gt;(): new java.util.Scanner(InputStream)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e52" style="display: none;">
+                  <a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+                  <br/>In class Main<br/>In method Main.&lt;static initializer for Main&gt;()<br/>Called method new java.util.Scanner(InputStream)<br/>At Main.java:[line 10]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e265');">
+            <td>
+               <span class="priority-1">Dm</span>
+            </td>
+            <td>Found reliance on default encoding in shop.Shop.enterShop(Character): new java.util.Scanner(InputStream)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e265" style="display: none;">
+                  <a href="#DM_DEFAULT_ENCODING">Bug type DM_DEFAULT_ENCODING (click for details)</a>
+                  <br/>In class shop.Shop<br/>In method shop.Shop.enterShop(Character)<br/>Called method new java.util.Scanner(InputStream)<br/>At Shop.java:[line 50]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e121');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>characters.Character.getInventory() may expose internal representation by returning Character.inventory</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e121" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class characters.Character<br/>In method characters.Character.getInventory()<br/>Field characters.Character.inventory<br/>At Character.java:[line 136]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e208');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>floor.Floor.getEnemies() may expose internal representation by returning Floor.enemies</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e208" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class floor.Floor<br/>In method floor.Floor.getEnemies()<br/>Field floor.Floor.enemies<br/>At Floor.java:[line 35]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e280');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>shop.Shop.getItems() may expose internal representation by returning Shop.items</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e280" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class shop.Shop<br/>In method shop.Shop.getItems()<br/>Field shop.Shop.items<br/>At Shop.java:[line 75]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e320');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>shop.ShopItem.getItem() may expose internal representation by returning ShopItem.items</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e320" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class shop.ShopItem<br/>In method shop.ShopItem.getItem()<br/>Field shop.ShopItem.items<br/>At ShopItem.java:[line 44]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e336');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>shop.ShopItem.getItems() may expose internal representation by returning ShopItem.items</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e336" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class shop.ShopItem<br/>In method shop.ShopItem.getItems()<br/>Field shop.ShopItem.items<br/>At ShopItem.java:[line 39]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e430');">
+            <td>
+               <span class="priority-2">EI</span>
+            </td>
+            <td>trainer.Trainer.getCharacter() may expose internal representation by returning Trainer.character</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e430" style="display: none;">
+                  <a href="#EI_EXPOSE_REP">Bug type EI_EXPOSE_REP (click for details)</a>
+                  <br/>In class trainer.Trainer<br/>In method trainer.Trainer.getCharacter()<br/>Field trainer.Trainer.character<br/>At Trainer.java:[line 28]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e103');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new battle.Battle(Character, Enemy) may expose internal representation by storing an externally mutable object into Battle.player</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e103" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class battle.Battle<br/>In method new battle.Battle(Character, Enemy)<br/>Field battle.Battle.player<br/>Local variable named player<br/>At Battle.java:[line 11]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e150');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new characters.CharacterDecorator(Character) may expose internal representation by storing an externally mutable object into CharacterDecorator.decoratedCharacter</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e150" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class characters.CharacterDecorator<br/>In method new characters.CharacterDecorator(Character)<br/>Field characters.CharacterDecorator.decoratedCharacter<br/>Local variable named decoratedCharacter<br/>At CharacterDecorator.java:[line 8]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e398');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new simulation.Mediator(Dungeon, Character) may expose internal representation by storing an externally mutable object into Mediator.playerCharacter</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e398" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class simulation.Mediator<br/>In method new simulation.Mediator(Dungeon, Character)<br/>Field simulation.Mediator.playerCharacter<br/>Local variable named playerCharacter<br/>At Mediator.java:[line 15]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e446');">
+            <td>
+               <span class="priority-2">EI2</span>
+            </td>
+            <td>new trainer.Trainer(Character) may expose internal representation by storing an externally mutable object into Trainer.character</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e446" style="display: none;">
+                  <a href="#EI_EXPOSE_REP2">Bug type EI_EXPOSE_REP2 (click for details)</a>
+                  <br/>In class trainer.Trainer<br/>In method new trainer.Trainer(Character)<br/>Field trainer.Trainer.character<br/>Local variable named character<br/>At Trainer.java:[line 12]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_PERFORMANCE">Performance Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e224');">
+            <td>
+               <span class="priority-2">UrF</span>
+            </td>
+            <td>Unread field: race.Race.description</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e224" style="display: none;">
+                  <a href="#URF_UNREAD_FIELD">Bug type URF_UNREAD_FIELD (click for details)</a>
+                  <br/>In class race.Race<br/>Field race.Race.description<br/>At Race.java:[line 9]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e237');">
+            <td>
+               <span class="priority-2">UrF</span>
+            </td>
+            <td>Unread field: race.Race.name</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e237" style="display: none;">
+                  <a href="#URF_UNREAD_FIELD">Bug type URF_UNREAD_FIELD (click for details)</a>
+                  <br/>In class race.Race<br/>Field race.Race.name<br/>At Race.java:[line 8]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_STYLE">Dodgy code Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e296');">
+            <td>
+               <span class="priority-2">BC</span>
+            </td>
+            <td>Unchecked/unconfirmed cast from java.util.List&lt;shop.ShopItem&gt; to item.Item in shop.ShopItem.getItem()</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e296" style="display: none;">
+                  <a href="#BC_UNCONFIRMED_CAST">Bug type BC_UNCONFIRMED_CAST (click for details)</a>
+                  <br/>In class shop.ShopItem<br/>In method shop.ShopItem.getItem()<br/>Actual type java.util.List&lt;shop.ShopItem&gt;<br/>Expected item.Item<br/>Value loaded from field shop.ShopItem.items<br/>At ShopItem.java:[line 44]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e67');">
+            <td>
+               <span class="priority-2">SF</span>
+            </td>
+            <td>Switch statement found in Main.gameLoop() where default case is missing</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e67" style="display: none;">
+                  <a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+                  <br/>In class Main<br/>In method Main.gameLoop()<br/>At Main.java:[lines 86-97]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e79');">
+            <td>
+               <span class="priority-2">SF</span>
+            </td>
+            <td>Switch statement found in Main.main(String[]) where default case is missing</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e79" style="display: none;">
+                  <a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+                  <br/>In class Main<br/>In method Main.main(String[])<br/>At Main.java:[lines 18-26]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e91');">
+            <td>
+               <span class="priority-2">SF</span>
+            </td>
+            <td>Switch statement found in Main.startNewGame() where default case is missing</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e91" style="display: none;">
+                  <a href="#SF_SWITCH_NO_DEFAULT">Bug type SF_SWITCH_NO_DEFAULT (click for details)</a>
+                  <br/>In class Main<br/>In method Main.startNewGame()<br/>At Main.java:[lines 61-69]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e137');">
+            <td>
+               <span class="priority-2">UwF</span>
+            </td>
+            <td>Unwritten public or protected field: characters.Character.inventory</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e137" style="display: none;">
+                  <a href="#UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD">Bug type UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD (click for details)</a>
+                  <br/>In class characters.Character<br/>Field characters.Character.inventory<br/>At Character.java:[line 76]</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="BC_IMPOSSIBLE_CAST">BC_IMPOSSIBLE_CAST: Impossible cast</a>
+      </h2>
+
+<p>
+This cast will always throw a ClassCastException.
+SpotBugs tracks type information from instanceof checks,
+and also uses more precise information about the types
+of values returned from methods and loaded from fields.
+Thus, it may have more precise information than just
+the declared type of a variable, and can use this to determine
+that a cast will always throw an exception at runtime.
+</p>
+
+    <h2>
+         <a name="BC_UNCONFIRMED_CAST">BC_UNCONFIRMED_CAST: Unchecked/unconfirmed cast</a>
+      </h2>
+
+<p>
+This cast is unchecked, and not all instances of the type casted from can be cast to
+the type it is being cast to. Check that your program logic ensures that this
+cast will not fail.
+</p>
+
+    <h2>
+         <a name="DMI_RANDOM_USED_ONLY_ONCE">DMI_RANDOM_USED_ONLY_ONCE: Random object created and used only once</a>
+      </h2>
+
+<p> This code creates a java.util.Random object, uses it to generate one random number, and then discards
+the Random object. This produces mediocre quality random numbers and is inefficient.
+If possible, rewrite the code so that the Random object is created once and saved, and each time a new random number
+is required invoke a method on the existing Random object to obtain it.
+</p>
+
+<p>If it is important that the generated Random numbers not be guessable, you <em>must</em> not create a new Random for each random
+number; the values are too easily guessable. You should strongly consider using a java.security.SecureRandom instead
+(and avoid allocating a new SecureRandom for each random number needed).
+</p>
+
+    <h2>
+         <a name="DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING: Reliance on default encoding</a>
+      </h2>
+
+<p> Found a call to a method which will perform a byte to String (or String to byte) conversion,
+and will assume that the default platform encoding is suitable. This will cause the application
+behavior to vary between platforms. Use an alternative API and specify a charset name or Charset
+object explicitly.</p>
+
+      <h2>
+         <a name="EI_EXPOSE_REP">EI_EXPOSE_REP: May expose internal representation by returning reference to mutable object</a>
+      </h2>
+
+  <p> Returning a reference to a mutable object value stored in one of the object's fields
+  exposes the internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Returning a new copy of the object is better approach in many situations.</p>
+
+    <h2>
+         <a name="EI_EXPOSE_REP2">EI_EXPOSE_REP2: May expose internal representation by incorporating reference to mutable object</a>
+      </h2>
+
+  <p> This code stores a reference to an externally mutable object into the
+  internal representation of the object.&nbsp;
+   If instances
+   are accessed by untrusted code, and unchecked changes to
+   the mutable object would compromise security or other
+   important properties, you will need to do something different.
+  Storing a copy of the object is better approach in many situations.</p>
+
+    <h2>
+         <a name="NP_ALWAYS_NULL">NP_ALWAYS_NULL: Null pointer dereference</a>
+      </h2>
+
+<p> A null pointer is dereferenced here.&nbsp; This will lead to a
+<code>NullPointerException</code> when the code is executed.</p>
+
+    <h2>
+         <a name="SA_FIELD_SELF_ASSIGNMENT">SA_FIELD_SELF_ASSIGNMENT: Self assignment of field</a>
+      </h2>
+
+<p> This method contains a self assignment of a field; e.g.
+</p>
+<pre><code>int x;
+public void foo() {
+    x = x;
+}
+</code></pre>
+<p>Such assignments are useless, and may indicate a logic error or typo.</p>
+
+    <h2>
+         <a name="SF_SWITCH_NO_DEFAULT">SF_SWITCH_NO_DEFAULT: Switch statement found where default case is missing</a>
+      </h2>
+
+  <p> This method contains a switch statement where default case is missing.
+  Usually you need to provide a default case.</p>
+  <p>Because the analysis only looks at the generated bytecode, this warning can be incorrect triggered if
+the default case is at the end of the switch statement and the switch statement doesn't contain break statements for other
+cases.
+
+    <h2>
+         <a name="UR_UNINIT_READ">UR_UNINIT_READ: Uninitialized read of field in constructor</a>
+      </h2>
+
+  <p> This constructor reads a field which has not yet been assigned a value.&nbsp;
+  This is often caused when the programmer mistakenly uses the field instead
+  of one of the constructor's parameters.</p>
+
+    <h2>
+         <a name="URF_UNREAD_FIELD">URF_UNREAD_FIELD: Unread field</a>
+      </h2>
+
+  <p> This field is never read.&nbsp; Consider removing it from the class.</p>
+
+    <h2>
+         <a name="UWF_UNWRITTEN_FIELD">UWF_UNWRITTEN_FIELD: Unwritten field</a>
+      </h2>
+
+  <p> This field is never written.&nbsp; All reads of it will return the default
+value. Check for errors (should it have been initialized?), or remove it if it is useless.</p>
+
+    <h2>
+         <a name="UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD">UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD: Unwritten public or protected field</a>
+      </h2>
+
+  <p> No writes were seen to this public/protected field.&nbsp; All reads of it will return the default
+value. Check for errors (should it have been initialized?), or remove it if it is useless.</p>
+
+    </body>
+</html>
